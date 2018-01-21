@@ -18,6 +18,21 @@ class MultiArrayViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Multi Selection - Array"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(MultiArrayViewController.doneButtnTapped(_:)))
+    }
+    
+    @objc private func doneButtnTapped(_ sender: UIBarButtonItem) {
+        let message: String = {
+            let elements = self.selection.selectionContainer.elements
+            if elements.isEmpty {
+                return "No selection"
+            } else {
+                return elements.map { $0.description }.joined(separator: "\n")
+            }
+        }()
+        let alert = UIAlertController(title: "Result", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

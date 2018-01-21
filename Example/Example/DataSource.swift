@@ -9,13 +9,17 @@
 import Foundation
 import ElementSelection
 
-struct Person: Identifiable, Hashable {
+struct Person: Identifiable, Hashable, CustomStringConvertible {
     
     let id: String
     let name: String
     
     var identifier: String {
         return id
+    }
+    
+    var description: String {
+        return "Name: \(self.name), ID: \(self.id)"
     }
 }
 

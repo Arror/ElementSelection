@@ -18,6 +18,20 @@ class RadioViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Radio Selection"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(RadioViewController.doneButtnTapped(_:)))
+    }
+    
+    @objc private func doneButtnTapped(_ sender: UIBarButtonItem) {
+        let message: String = {
+            if let element = self.selection.selectionContainer.element {
+                return element.description
+            } else {
+                return "No selection"
+            }
+        }()
+        let alert = UIAlertController(title: "Result", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
