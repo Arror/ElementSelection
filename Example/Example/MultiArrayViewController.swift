@@ -13,7 +13,7 @@ class MultiArrayViewController: UITableViewController {
 
     private let controller = PersonController()
     
-    private lazy var selection = MultiSelection(container: self.controller, selectionContainerType: Array.self)
+    private lazy var selection = MultiSelection(container: self.controller, selectionContainerType: Multi.List.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
