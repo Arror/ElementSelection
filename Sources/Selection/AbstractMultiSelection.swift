@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class AbstractMultiSelection<EC: ElementContainer, MSEC: MultiElementSelectionContainer>: MultiElementSelection where EC.Element == MSEC.Element, EC.Element: Identifiable, EC.Element.Identifier: Equatable {
+open class AbstractMultiSelection<EC: ElementContainer, MSEC: MultiElementSelectionContainer>: MultiElementSelection where EC.Element == MSEC.Element, EC.Element: Identifiable, EC.Element.Identifier: Hashable {
     
     public typealias Container = EC
     public typealias MultiSelectionContainer = MSEC
