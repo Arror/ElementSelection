@@ -20,7 +20,7 @@
 		A6963F7CD053397BD9D8E3017E03B955 /* ElementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9F97A7B13F5E17D73BBC5D0B4D4D4F /* ElementContainer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C2F5262623D89EFB9E5199D259B7E972 /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 699118D7DDD5F335E4FB8B17DC0F12D2 /* Pods-Example-dummy.m */; };
 		C35AF23AC21CA626BAA4236474993152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		D1A9274267E34A52EEFF56EBA72CE4AC /* AbstractSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60204B605BA06808042793579E087254 /* AbstractSelection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D1A9274267E34A52EEFF56EBA72CE4AC /* AbstractMultiSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60204B605BA06808042793579E087254 /* AbstractMultiSelection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FC67D1738DFD81E7235B9E46EE51C3A2 /* RadioSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD61ED2E08635BD0D90AE3BCAD01C088 /* RadioSelection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FFA1182BF455D11DD3CE6E0DA5078391 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,7 @@
 		46F2AE2947947497BBF715A076EB0F69 /* ElementSelection.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ElementSelection.modulemap; sourceTree = "<group>"; };
 		4831E0D51CA20A01C4D53A6E957F63EF /* ElementSelection-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ElementSelection-dummy.m"; sourceTree = "<group>"; };
 		552550F3F912264E5D073F8893691F88 /* Pods-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-frameworks.sh"; sourceTree = "<group>"; };
-		60204B605BA06808042793579E087254 /* AbstractSelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AbstractSelection.swift; sourceTree = "<group>"; };
+		60204B605BA06808042793579E087254 /* AbstractMultiSelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AbstractMultiSelection.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		699118D7DDD5F335E4FB8B17DC0F12D2 /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
 		6B13B4252AE55EB1EA249425D12F7817 /* Identifiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		F1C8D7C3DF74A7B4274B3599B7573434 /* Selection */ = {
 			isa = PBXGroup;
 			children = (
-				60204B605BA06808042793579E087254 /* AbstractSelection.swift */,
+				60204B605BA06808042793579E087254 /* AbstractMultiSelection.swift */,
 				D7DA24CB9A3B0D7FAFA6219776D40783 /* MultiSelection.swift */,
 				BD61ED2E08635BD0D90AE3BCAD01C088 /* RadioSelection.swift */,
 			);
@@ -307,7 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1A9274267E34A52EEFF56EBA72CE4AC /* AbstractSelection.swift in Sources */,
+				D1A9274267E34A52EEFF56EBA72CE4AC /* AbstractMultiSelection.swift in Sources */,
 				A6963F7CD053397BD9D8E3017E03B955 /* ElementContainer.swift in Sources */,
 				9261EDAA8777D9DA350B6323192DAEFE /* ElementSelection-dummy.m in Sources */,
 				7017245320146A420079153B /* Multi.swift in Sources */,
