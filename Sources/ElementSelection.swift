@@ -19,6 +19,8 @@ public protocol ElementSelection: class {
     func set(selected isSelected: Bool, for element: Container.Element)
     
     func updateSelectionIfElementContainerAvailable()
+    
+    func clear()
 }
 
 public protocol RadioElementSelection: ElementSelection {

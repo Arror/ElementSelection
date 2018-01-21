@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,9 @@
 		3D531A5772D6A5CA5A9A3BDAA38B281C /* ElementSelection-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3F0F163DB419392B4519F00A1718B3 /* ElementSelection-dummy.m */; };
 		4115403A057D5CB2C4833A42754B2BFD /* RadioElementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762B765850E559D320A371309BF16EC4 /* RadioElementContainer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		48A494E21CDFE283CDBA3971BA019470 /* ElementContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15180FAD1C6707FA94A2803A42C60E07 /* ElementContainer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7017244920145E400079153B /* AbstractSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7017244820145E400079153B /* AbstractSelection.swift */; };
+		7017244B20145E650079153B /* RadioSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7017244A20145E650079153B /* RadioSelection.swift */; };
+		7017244D20145ECB0079153B /* MultiSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7017244C20145ECB0079153B /* MultiSelection.swift */; };
 		8012C36954883CCFA1ACDA929DFD8512 /* ElementSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391C6A13E602E6D816474B5EC8013439 /* ElementSelection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		8151D6B664D2B37E34D573FD5F9458C0 /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BDE82371C83FA9AE91B05F77ACAA36 /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		89E5B69AD5A7A298817073BC641D0A61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -34,10 +37,10 @@
 
 /* Begin PBXFileReference section */
 		01E6907CF2644EB1CF8E23F708A3DA0B /* Pods-Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-resources.sh"; sourceTree = "<group>"; };
-		119072C64A19799964E1620D83F514FB /* Pods-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Example.modulemap"; sourceTree = "<group>"; };
+		119072C64A19799964E1620D83F514FB /* Pods-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Example.modulemap"; sourceTree = "<group>"; };
 		149054C495E8EC590CAB4C524133016F /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		15180FAD1C6707FA94A2803A42C60E07 /* ElementContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementContainer.swift; path = Sources/ElementContainer.swift; sourceTree = "<group>"; };
-		19182317DE4C25D5F13041F6E212AA06 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Example.framework; path = "Pods-Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19182317DE4C25D5F13041F6E212AA06 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E0AD62ECFE24562C126A0E878548BD2 /* SelectionItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectionItem.swift; path = Sources/SelectionItem.swift; sourceTree = "<group>"; };
 		277B94C3525DEC99884684BE5E103F61 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		391C6A13E602E6D816474B5EC8013439 /* ElementSelection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementSelection.swift; path = Sources/ElementSelection.swift; sourceTree = "<group>"; };
@@ -45,21 +48,24 @@
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		699118D7DDD5F335E4FB8B17DC0F12D2 /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
 		6D3F0F163DB419392B4519F00A1718B3 /* ElementSelection-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ElementSelection-dummy.m"; sourceTree = "<group>"; };
+		7017244820145E400079153B /* AbstractSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AbstractSelection.swift; path = Sources/AbstractSelection.swift; sourceTree = "<group>"; };
+		7017244A20145E650079153B /* RadioSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RadioSelection.swift; path = Sources/RadioSelection.swift; sourceTree = "<group>"; };
+		7017244C20145ECB0079153B /* MultiSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiSelection.swift; path = Sources/MultiSelection.swift; sourceTree = "<group>"; };
 		762B765850E559D320A371309BF16EC4 /* RadioElementContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioElementContainer.swift; path = Sources/RadioElementContainer.swift; sourceTree = "<group>"; };
 		764D33E23CE6C1111110B04F5CBADADB /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		84DD15DF0DF688475AA09E1F146D7964 /* Identifiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifiable.swift; path = Sources/Identifiable.swift; sourceTree = "<group>"; };
 		8750F26470979AD14C6D066041B66AF2 /* ElementSelectionContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementSelectionContainer.swift; path = Sources/ElementSelectionContainer.swift; sourceTree = "<group>"; };
 		88F23460E38A568CA1FC6FB1C1986DD6 /* ElementSelection.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ElementSelection.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A661FECCEBFF9D01869EE3B29C4C1EFF /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AA52AAA2273CB5BC152B5EC2647167B1 /* ElementSelection-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ElementSelection-umbrella.h"; sourceTree = "<group>"; };
 		C6F884ED38733281E020B674928987CC /* MultiElementContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultiElementContainer.swift; path = Sources/MultiElementContainer.swift; sourceTree = "<group>"; };
 		C9BDE82371C83FA9AE91B05F77ACAA36 /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
-		D26B66BE1CD535C6B7697F2A4A4DE48F /* ElementSelection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ElementSelection.framework; path = ElementSelection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D26B66BE1CD535C6B7697F2A4A4DE48F /* ElementSelection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ElementSelection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E512A5F985F876750237FD237C3AEEDA /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		ECAC13532AE6990DE60F2FCBFD797F15 /* ElementSelection-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ElementSelection-prefix.pch"; sourceTree = "<group>"; };
 		EFFB74AAA6B2AE8DABF0E88E61E09178 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF79C5903701ACBE335E90773E6BA8D3 /* ElementSelection.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ElementSelection.modulemap; sourceTree = "<group>"; };
+		FF79C5903701ACBE335E90773E6BA8D3 /* ElementSelection.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ElementSelection.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 				762B765850E559D320A371309BF16EC4 /* RadioElementContainer.swift */,
 				1E0AD62ECFE24562C126A0E878548BD2 /* SelectionItem.swift */,
 				268DDA8E65B353C89C745DA35EFD84D7 /* Support Files */,
+				7017244820145E400079153B /* AbstractSelection.swift */,
+				7017244A20145E650079153B /* RadioSelection.swift */,
+				7017244C20145ECB0079153B /* MultiSelection.swift */,
 			);
 			name = ElementSelection;
 			path = ../..;
@@ -278,7 +287,10 @@
 				23223D29E5B5B5EF06AFDA321C01C045 /* Identifiable.swift in Sources */,
 				FF8957D29DF049E4FB04E5D3A70DEE9A /* MultiElementContainer.swift in Sources */,
 				4115403A057D5CB2C4833A42754B2BFD /* RadioElementContainer.swift in Sources */,
+				7017244920145E400079153B /* AbstractSelection.swift in Sources */,
+				7017244B20145E650079153B /* RadioSelection.swift in Sources */,
 				B34F7F2C150B42755140F4109C2C82D5 /* SelectionItem.swift in Sources */,
+				7017244D20145ECB0079153B /* MultiSelection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

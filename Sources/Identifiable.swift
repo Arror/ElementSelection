@@ -44,31 +44,3 @@ extension Collection where Iterator.Element: Identifiable, Iterator.Element.Iden
         return mapping
     }
 }
-
-extension Int: Identifiable {
-    
-    public var identifier: Int {
-        return self
-    }
-}
-
-extension Float: Identifiable {
-    
-    public var identifier: Float {
-        return self
-    }
-}
-
-extension Double: Identifiable {
-    
-    public var identifier: Double {
-        return self
-    }
-}
-
-extension String: Identifiable {
-    
-    public var identifier: String {
-        return self
-    }
-}
