@@ -9,7 +9,7 @@ import Foundation
 
 open class MultiSelectionBox<MES: MultiElementSelection>: AbstractMultiSelection<MES.Container, MES.MultiSelectionContainer> where MES.Container.Element: Identifiable, MES.Container.Element.Identifier: Hashable {
     
-    private let inner: MES
+    public let inner: MES
     
     public init(inner: MES) {
         self.inner = inner
