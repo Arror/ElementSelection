@@ -14,5 +14,5 @@
     "git": "https://github.com/Arror/ElementSelection.git",
     "tag": "s.version"
   },
-  "source_files": "Sources/*.swift"
+  "source_files": "Sources/**/*.swift"
 }

@@ -13,7 +13,7 @@ class RadioViewController: UITableViewController {
 
     private let controller = PersonController()
     
-    private lazy var selection = RadioSelection(container: self.controller, selectionContainerType: RadioElementContainer.self)
+    private lazy var selection = RadioSelection(container: self.controller, selectionContainerType: Radio.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()

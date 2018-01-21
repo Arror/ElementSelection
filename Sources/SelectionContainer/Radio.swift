@@ -1,5 +1,5 @@
 //
-//  RadioElementContainer.swift
+//  Radio.swift
 //  ElementSelection
 //
 //  Created by Arror on 2018/1/2.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct RadioElementContainer<Element: Equatable>: RadioElementSelectionContainer {
+public struct Radio<Element: Equatable>: RadioElementSelectionContainer {
     
     public private(set) var element: Element?
     

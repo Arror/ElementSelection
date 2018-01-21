@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.author        = { 'Arror' => 'hallo.maqiang@gmail.com' }
   s.platform      = :ios, '9.0'
   s.source        = { :git => 'https://github.com/Arror/ElementSelection.git', :tag => 's.version' }
-  s.source_files  = 'Sources/*.swift'
+  s.source_files  = 'Sources/**/*.swift'
 
 end

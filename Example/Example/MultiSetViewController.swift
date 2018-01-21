@@ -13,7 +13,7 @@ class MultiSetViewController: UITableViewController {
 
     private let controller = PersonController()
     
-    private lazy var selection = MultiSelection(container: self.controller, selectionContainerType: Set<Person>.self)
+    private lazy var selection = MultiSelection(container: self.controller, selectionContainerType: Set.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
