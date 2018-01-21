@@ -7,17 +7,25 @@
 
 import Foundation
 
-public final class MultiSelection<Container: ElementContainer, MultiSelectionContainer: MultiElementSelectionContainer>: AbstractMultiSelection<Container, MultiSelectionContainer> where MultiSelectionContainer.Element == Container.Element, Container.Element: Identifiable, Container.Element.Identifier: Equatable {
+public final class MultiSelection<EC: ElementContainer, MSEC: MultiElementSelectionContainer>: AbstractMultiSelection<EC, MSEC> where EC.Element == MSEC.Element, EC.Element: Identifiable, EC.Element.Identifier: Equatable {
     
-    public required init(container: Container, selectionContainerType: MultiSelectionContainer.Type) {
-        super.init(container: container, selectionContainerType: selectionContainerType)
+    private let container: EC
+    private var selectionContainer: MSEC
+    
+    public init(container: EC, selectionContainerType: MSEC.Type) {
+        self.container = container
+        self.selectionContainer = selectionContainerType.init()
     }
     
-    public override func isSelected(of element: Container.Element) -> Bool {
+    public override var elements: [EC.Element] {
+        return self.selectionContainer.elements
+    }
+    
+    public override func isSelected(of element: EC.Element) -> Bool {
         return self.selectionContainer.isSelected(of: element)
     }
     
-    public override func set(selected isSelected: Bool, for element: Container.Element) {
+    public override func set(selected isSelected: Bool, for element: EC.Element) {
         if isSelected {
             self.selectionContainer.select(element: element)
         } else {

@@ -7,21 +7,28 @@
 
 import Foundation
 
-public final class RadioSelection<Container: ElementContainer, RadioSelectionContainer: RadioElementSelectionContainer>: RadioElementSelection where RadioSelectionContainer.Element == Container.Element, Container.Element: Equatable {
+public final class RadioSelection<EC: ElementContainer, RSEC: RadioElementSelectionContainer>: RadioElementSelection where EC.Element == RSEC.Element, EC.Element: Equatable {
     
-    public let container: Container
-    public private(set) var selectionContainer: RadioSelectionContainer
+    public typealias Container = EC
+    public typealias RadioSelectionContainer = RSEC
     
-    public required init(container: Container, selectionContainerType: RadioSelectionContainer.Type) {
+    internal let container: EC
+    internal var selectionContainer: RSEC
+    
+    public required init(container: EC, selectionContainerType: RSEC.Type) {
         self.container = container
         self.selectionContainer = selectionContainerType.init()
     }
     
-    public func isSelected(of element: Container.Element) -> Bool {
+    public var element: EC.Element? {
+        return self.selectionContainer.element
+    }
+    
+    public func isSelected(of element: EC.Element) -> Bool {
         return self.selectionContainer.isSelected(of: element)
     }
     
-    public func set(selected isSelected: Bool, for element: Container.Element) {
+    public func set(selected isSelected: Bool, for element: EC.Element) {
         if isSelected {
             self.selectionContainer.select(element: element)
         } else {

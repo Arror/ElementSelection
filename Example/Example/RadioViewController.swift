@@ -23,7 +23,7 @@ class RadioViewController: UITableViewController {
     
     @objc private func doneButtnTapped(_ sender: UIBarButtonItem) {
         let message: String = {
-            if let element = self.selection.selectionContainer.element {
+            if let element = self.selection.element {
                 return element.description
             } else {
                 return "No selection"

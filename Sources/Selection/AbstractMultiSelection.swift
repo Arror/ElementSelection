@@ -7,21 +7,20 @@
 
 import Foundation
 
-open class AbstractMultiSelection<Container: ElementContainer, MultiSelectionContainer: MultiElementSelectionContainer>: MultiElementSelection where MultiSelectionContainer.Element == Container.Element, Container.Element: Identifiable, Container.Element.Identifier: Equatable {
+open class AbstractMultiSelection<EC: ElementContainer, MSEC: MultiElementSelectionContainer>: MultiElementSelection where EC.Element == MSEC.Element, EC.Element: Identifiable, EC.Element.Identifier: Equatable {
     
-    public let container: Container
-    public internal(set) var selectionContainer: MultiSelectionContainer
+    public typealias Container = EC
+    public typealias MultiSelectionContainer = MSEC
     
-    public required init(container: Container, selectionContainerType: MultiSelectionContainer.Type) {
-        self.container = container
-        self.selectionContainer = selectionContainerType.init()
-    }
-    
-    open func isSelected(of element: Container.Element) -> Bool {
+    public var elements: [EC.Element] {
         fatalError("Not implement.")
     }
     
-    open func set(selected isSelected: Bool, for element: Container.Element) {
+    open func isSelected(of element: EC.Element) -> Bool {
+        fatalError("Not implement.")
+    }
+    
+    open func set(selected isSelected: Bool, for element: EC.Element) {
         fatalError("Not implement.")
     }
     

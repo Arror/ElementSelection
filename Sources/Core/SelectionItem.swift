@@ -8,13 +8,13 @@
 
 import Foundation
 
-public struct SelectionItem<Selection: ElementSelection> {
+public struct SelectionItem<ES: ElementSelection> {
     
-    private weak var selection: Selection?
+    private weak var selection: ES?
     
-    public let element: Selection.Container.Element
+    public let element: ES.Container.Element
     
-    internal init(selection: Selection, element: Selection.Container.Element) {
+    internal init(selection: ES, element: ES.Container.Element) {
         self.selection = selection
         self.element = element
     }

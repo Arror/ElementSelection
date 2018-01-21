@@ -23,7 +23,7 @@ class MultiArrayViewController: UITableViewController {
     
     @objc private func doneButtnTapped(_ sender: UIBarButtonItem) {
         let message: String = {
-            let elements = self.selection.selectionContainer.elements
+            let elements = self.selection.elements
             if elements.isEmpty {
                 return "No selection"
             } else {

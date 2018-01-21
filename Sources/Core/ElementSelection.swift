@@ -12,8 +12,6 @@ public protocol ElementSelection: class {
     
     associatedtype Container: ElementContainer
     
-    var container: Container { get }
-    
     func isSelected(of element: Container.Element) -> Bool
     
     func set(selected isSelected: Bool, for element: Container.Element)
@@ -25,20 +23,16 @@ public protocol ElementSelection: class {
 
 public protocol RadioElementSelection: ElementSelection {
     
-    associatedtype SelectionContainer: RadioElementSelectionContainer where SelectionContainer.Element == Container.Element
+    associatedtype RadioSelectionContainer: RadioElementSelectionContainer where RadioSelectionContainer.Element == Container.Element
     
-    var selectionContainer: SelectionContainer { get }
-    
-    init(container: Container, selectionContainerType: SelectionContainer.Type)
+    var element: Container.Element? { get }
 }
 
 public protocol MultiElementSelection: ElementSelection {
     
-    associatedtype SelectionContainer: MultiElementSelectionContainer where SelectionContainer.Element == Container.Element
+    associatedtype MultiSelectionContainer: MultiElementSelectionContainer where MultiSelectionContainer.Element == Container.Element
     
-    var selectionContainer: SelectionContainer { get }
-    
-    init(container: Container, selectionContainerType: SelectionContainer.Type)
+    var elements: [Container.Element] { get }
 }
 
 extension ElementSelection {
