@@ -13,7 +13,7 @@ class MultiArrayViewController: UITableViewController {
 
     private let controller = PersonController()
     
-    private lazy var selection = MultiSelection(container: self.controller, selectionContainerType: Multi.List.self)
+    private lazy var selection = LimitMultiSelection(inner: MultiSelection(container: self.controller, selectionContainerType: Multi.List.self), limit: 5)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +59,14 @@ class MultiArrayViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let person = self.controller.elements[indexPath.row]
         let isSelected = self.selection.isSelected(of: person)
-        self.selection.set(selected: !isSelected, for: person)
-        tableView.reloadData()
+        if !isSelected && self.selection.isFull {
+            let alert = UIAlertController(title: "Notice", message: "Limit: \(self.selection.limit)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            self.selection.set(selected: !isSelected, for: person)
+            tableView.reloadData()
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
