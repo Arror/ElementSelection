@@ -1,0 +1,6 @@
+framework module ElementSelection {
+  umbrella header "ElementSelection-umbrella.h"
+
+  export *
+  module * { export * }
+}
