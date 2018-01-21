@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import ElementSelection
 
 class MultiSetViewController: UITableViewController {
 
     private let controller = PersonController()
     
+    private lazy var selection = MultiSelection(container: self.controller, selectionContainerType: Set<Person>.self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Radio Selection - Set"
+        self.title = "Multi Selection - Set"
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -30,7 +33,19 @@ class MultiSetViewController: UITableViewController {
         let person = self.controller.elements[indexPath.row]
         cell.textLabel?.text = person.name
         cell.detailTextLabel?.text = "ID: \(person.id)"
+        if self.selection.isSelected(of: person) {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = self.controller.elements[indexPath.row]
+        let isSelected = self.selection.isSelected(of: person)
+        self.selection.set(selected: !isSelected, for: person)
+        tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
