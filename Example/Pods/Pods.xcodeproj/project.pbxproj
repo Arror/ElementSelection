@@ -12,6 +12,7 @@
 		5DF034C8358B27AE208C11FBE5CE54E8 /* Radio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12B025A5028EB22B176E5406336E952 /* Radio.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		6EDB17B8050D489DB79FCC722CF1F326 /* ElementSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD49C0CFCE65AE52333F1086751890 /* ElementSelection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7017245320146A420079153B /* Multi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7017245220146A420079153B /* Multi.swift */; };
+		7017245920149B350079153B /* MultiSelectionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7017245820149B350079153B /* MultiSelectionBox.swift */; };
 		8151D6B664D2B37E34D573FD5F9458C0 /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BDE82371C83FA9AE91B05F77ACAA36 /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82DAA758FEF80A249256D731FE8ED424 /* MultiSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DA24CB9A3B0D7FAFA6219776D40783 /* MultiSelection.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9261EDAA8777D9DA350B6323192DAEFE /* ElementSelection-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4831E0D51CA20A01C4D53A6E957F63EF /* ElementSelection-dummy.m */; };
@@ -52,6 +53,7 @@
 		699118D7DDD5F335E4FB8B17DC0F12D2 /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
 		6B13B4252AE55EB1EA249425D12F7817 /* Identifiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		7017245220146A420079153B /* Multi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multi.swift; sourceTree = "<group>"; };
+		7017245820149B350079153B /* MultiSelectionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionBox.swift; sourceTree = "<group>"; };
 		764D33E23CE6C1111110B04F5CBADADB /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A661FECCEBFF9D01869EE3B29C4C1EFF /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				60204B605BA06808042793579E087254 /* AbstractMultiSelection.swift */,
+				7017245820149B350079153B /* MultiSelectionBox.swift */,
 				D7DA24CB9A3B0D7FAFA6219776D40783 /* MultiSelection.swift */,
 				BD61ED2E08635BD0D90AE3BCAD01C088 /* RadioSelection.swift */,
 			);
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7017245920149B350079153B /* MultiSelectionBox.swift in Sources */,
 				D1A9274267E34A52EEFF56EBA72CE4AC /* AbstractMultiSelection.swift in Sources */,
 				A6963F7CD053397BD9D8E3017E03B955 /* ElementContainer.swift in Sources */,
 				9261EDAA8777D9DA350B6323192DAEFE /* ElementSelection-dummy.m in Sources */,
