@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class RadioSelection<Container: ElementContainer, RadioSelectionContainer: RadioElementSelectionContainer>: AbstractSelection<Container>, RadioElementSelection where RadioSelectionContainer.Element == Container.Element, Container.Element: Identifiable, Container.Element.Identifier: Equatable {
+public final class RadioSelection<Container: ElementContainer, RadioSelectionContainer: RadioElementSelectionContainer>: AbstractSelection<Container>, RadioElementSelection where RadioSelectionContainer.Element == Container.Element, Container.Element: Equatable {
     
     public private(set) var selectionContainer: RadioSelectionContainer
     
