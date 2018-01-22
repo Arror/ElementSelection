@@ -9,9 +9,9 @@ import Foundation
 
 public enum Multi {
     
-    public struct List<Element: Identifiable>: MultiElementSelectionContainer where Element: Equatable, Element.Identifier: Hashable {
+    public struct Array<Element: Identifiable>: MultiElementSelectionContainer where Element: Equatable, Element.Identifier: Hashable {
         
-        public private(set) var elements: [Element] = []
+        public private(set) var elements: Swift.Array<Element> = []
         
         public init() {}
         
@@ -40,7 +40,7 @@ public enum Multi {
         
         public mutating func update<Container>(by elementContainer: Container) where Container: ElementContainer, Container.Element == Element {
             let mapping = elementContainer.elements.idMapping
-            var new: Array<Element> = []
+            var new: Swift.Array<Element> = []
             self.elements.forEach { element in
                 if let e = mapping[element.identifier] {
                     new.append(e)
@@ -50,13 +50,13 @@ public enum Multi {
         }
     }
     
-    public struct Map<Element: Identifiable>: MultiElementSelectionContainer where Element: Hashable, Element.Identifier: Hashable {
+    public struct Set<Element: Identifiable>: MultiElementSelectionContainer where Element: Hashable, Element.Identifier: Hashable {
         
         public var elements: [Element] {
-            return Array(self.inner)
+            return Swift.Array(self.inner)
         }
         
-        private var inner: Set<Element> = []
+        private var inner: Swift.Set<Element> = []
         
         public init() {}
         
@@ -85,7 +85,7 @@ public enum Multi {
         
         public mutating func update<Container>(by elementContainer: Container) where Container: ElementContainer, Container.Element == Element {
             let mapping = elementContainer.elements.idMapping
-            var new: Set<Element> = []
+            var new: Swift.Set<Element> = []
             self.inner.forEach { element in
                 if let e = mapping[element.identifier] {
                     new.insert(e)

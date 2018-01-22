@@ -13,7 +13,7 @@ class MultiSetViewController: UITableViewController {
 
     private let controller = PersonController()
     
-    private lazy var selection = LimitMultiSelection(inner: MultiSelection(container: self.controller, selectionContainerType: Multi.Map.self), limit: 5)
+    private lazy var selection = LimitMultiSelection(inner: MultiSelection(container: self.controller, selectionContainerType: Multi.Set.self), limit: 5)
     
     override func viewDidLoad() {
         super.viewDidLoad()
