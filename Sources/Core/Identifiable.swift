@@ -38,7 +38,7 @@ extension Identifiable where Self: Comparable, Identifier: Comparable {
 
 extension Collection where Iterator.Element: Identifiable, Iterator.Element.Identifier: Hashable {
     
-    public var idMapping: [Iterator.Element.Identifier: Iterator.Element] {
+    internal var idMapping: [Iterator.Element.Identifier: Iterator.Element] {
         var mapping: [Iterator.Element.Identifier: Iterator.Element] = [:]
         self.forEach { mapping[$0.identifier] = $0 }
         return mapping
