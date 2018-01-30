@@ -7,9 +7,18 @@
 
 import Foundation
 
+extension Collection where Iterator.Element: Hashable {
+    
+    var elementMapping: [Int: Iterator.Element] {
+        var reval: [Int: Iterator.Element] = [:]
+        self.forEach { reval[$0.hashValue] = $0 }
+        return reval
+    }
+}
+
 public enum Multi {
     
-    public struct Array<Element: Identifiable>: MultiElementSelectionContainer where Element: Equatable, Element.Identifier: Hashable {
+    public struct Array<Element>: MultiElementSelectionContainer where Element: Hashable {
         
         public private(set) var elements: Swift.Array<Element> = []
         
@@ -39,10 +48,10 @@ public enum Multi {
         }
         
         public mutating func update<Container>(by elementContainer: Container) where Container: ElementContainer, Container.Element == Element {
-            let mapping = elementContainer.elements.idMapping
+            let mapping = elementContainer.elements.elementMapping
             var new: Swift.Array<Element> = []
             self.elements.forEach { element in
-                if let e = mapping[element.identifier] {
+                if let e = mapping[element.hashValue] {
                     new.append(e)
                 }
             }
@@ -50,7 +59,7 @@ public enum Multi {
         }
     }
     
-    public struct Set<Element: Identifiable>: MultiElementSelectionContainer where Element: Hashable, Element.Identifier: Hashable {
+    public struct Set<Element>: MultiElementSelectionContainer where Element: Hashable {
         
         public var elements: [Element] {
             return Swift.Array(self.inner)
@@ -84,10 +93,10 @@ public enum Multi {
         }
         
         public mutating func update<Container>(by elementContainer: Container) where Container: ElementContainer, Container.Element == Element {
-            let mapping = elementContainer.elements.idMapping
+            let mapping = elementContainer.elements.elementMapping
             var new: Swift.Set<Element> = []
             self.inner.forEach { element in
-                if let e = mapping[element.identifier] {
+                if let e = mapping[element.hashValue] {
                     new.insert(e)
                 }
             }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class MultiSelectionBox<MES: MultiElementSelection>: AbstractMultiSelection<MES.Container, MES.MultiSelectionContainer> where MES.Container.Element: Identifiable, MES.Container.Element.Identifier: Hashable {
+open class MultiSelectionBox<MES: MultiElementSelection>: AbstractMultiSelection<MES.Container, MES.MultiSelectionContainer> {
     
     public let inner: MES
     

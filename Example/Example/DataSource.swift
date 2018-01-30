@@ -9,13 +9,17 @@
 import Foundation
 import ElementSelection
 
-struct Person: Identifiable, Hashable, CustomStringConvertible {
+struct Person: Hashable, CustomStringConvertible {
     
     let id: String
     let name: String
     
-    var identifier: String {
-        return id
+    var hashValue: Int {
+        return self.id.hashValue
+    }
+    
+    static func ==(lhs: Person, rhs: Person) -> Bool {
+        return lhs.id == rhs.id
     }
     
     var description: String {

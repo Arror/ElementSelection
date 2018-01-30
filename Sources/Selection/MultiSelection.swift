@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class MultiSelection<EC: ElementContainer, MSEC: MultiElementSelectionContainer>: AbstractMultiSelection<EC, MSEC> where EC.Element == MSEC.Element, EC.Element: Identifiable, EC.Element.Identifier: Hashable {
+public final class MultiSelection<EC: ElementContainer, MSEC: MultiElementSelectionContainer>: AbstractMultiSelection<EC, MSEC> where EC.Element == MSEC.Element, EC.Element: Hashable {
     
     private let container: EC
     private var selectionContainer: MSEC

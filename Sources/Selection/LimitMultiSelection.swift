@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class LimitMultiSelection<MES: MultiElementSelection>: MultiSelectionBox<MES> where MES.Container.Element: Identifiable, MES.Container.Element.Identifier: Hashable {
+public final class LimitMultiSelection<MES: MultiElementSelection>: MultiSelectionBox<MES> where MES.Container.Element: Hashable {
     
     public let limit: Int
     
